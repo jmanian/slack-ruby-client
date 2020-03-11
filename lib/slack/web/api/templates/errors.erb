@@ -9,7 +9,7 @@ module Slack
   module Web
     module Api
       module Errors
-        ERRORS = {
+        ERROR_CLASSES = {
           <% errors.sort.each do |e| %>
             '<%= e %>' => <%= e.camelize %>,
           <% end %>
