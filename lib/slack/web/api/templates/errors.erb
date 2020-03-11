@@ -4,3 +4,17 @@
 <% errors.sort.each do |e| %>
 require_relative 'errors/<%= e %>'
 <% end %>
+
+module Slack
+  module Web
+    module Api
+      module Errors
+        ERRORS = {
+          <% errors.sort.each do |e| %>
+            '<%= e %>' => <%= e.camelize %>,
+          <% end %>
+        }
+      end
+    end
+  end
+end
